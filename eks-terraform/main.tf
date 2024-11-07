@@ -1,5 +1,5 @@
 provider "aws" {
-  region = "us-east-1"  # Specify your desired region
+  region = "ap-south-1"  # Specify your desired region
 }
 
  #Creating IAM role for EKS
@@ -106,7 +106,7 @@ provider "aws" {
 
   resource "aws_iam_instance_profile" "worker" {
     depends_on = [aws_iam_role.worker]
-    name       = "veera-eks-worker-new-profile"
+    name       = "eks-worker-new-profile"
     role       = aws_iam_role.worker.name
   }
  
