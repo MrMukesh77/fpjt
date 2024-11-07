@@ -4,7 +4,7 @@ provider "aws" {
 
  #Creating IAM role for EKS
   resource "aws_iam_role" "master" {
-    name = "veera-eks-master"
+    name = "eks-master"
 
     assume_role_policy = jsonencode({
       "Version": "2012-10-17",
@@ -36,7 +36,7 @@ provider "aws" {
   }
 
   resource "aws_iam_role" "worker" {
-    name = "veera-eks-worker"
+    name = "eks-worker"
 
     assume_role_policy = jsonencode({
       "Version": "2012-10-17",
@@ -53,7 +53,7 @@ provider "aws" {
   }
 
   resource "aws_iam_policy" "autoscaler" {
-    name = "veera-eks-autoscaler-policy"
+    name = "eks-autoscaler-policy"
     policy = jsonencode({
       "Version": "2012-10-17",
       "Statement": [
